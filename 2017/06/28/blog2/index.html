@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://yoursite.com/img/blog2/blog2_pic4.png">
 <meta property="og:image" content="http://yoursite.com/img/blog2/blog2_pic5.png">
 <meta property="og:image" content="http://yoursite.com/img/blog2/blog2_pic6.png">
-<meta property="og:updated_time" content="2017-06-28T15:57:59.247Z">
+<meta property="og:updated_time" content="2017-06-28T16:03:07.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用hexo + github搭建个人博客">
 <meta name="twitter:description" content="前言使用github pages服务搭建博客的好处有：  全是静态文件，访问速度快； 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台； 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的； 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； 博客内容可以轻松打包、转移、发布到其它平台； 等等；  准备工作在开始一切之前，你必须">
@@ -138,7 +138,7 @@ ga('send', 'pageview');
 </ol>
 <h2 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h2><p>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
 <p>检查本机已存在的ssh密钥<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd ~<span class="regexp">/. ssh</span></div></pre></td></tr></table></figure></p>
-<p>如果提示：No such file or directory 说明你是第一次使用git。那么执行下面这条命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></div></pre></td></tr></table></figure></p>
+<p>如果提示：No such file or directory 说明你是第一次使用git。那么执行下面这条命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span></div></pre></td></tr></table></figure></p>
 <p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，打开<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat ~<span class="regexp">/.ssh/i</span>d_rsa.pub</div></pre></td></tr></table></figure></p>
 <p>复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br>将刚复制的内容粘贴到key那里，title随便填，保存。<br><img src="/img/blog2/blog2_pic1.png" alt="Alt text"></p>
 <h2 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
@@ -188,7 +188,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/blog2/" data-id="cj4h6u12l0004g405a3i42bfl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/blog2/" data-id="cj4h6u12l0004g405a3i42bfl" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -199,7 +199,7 @@ ga('send', 'pageview');
   
   
     <a href="/2017/06/26/blog1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">gitbash常用快捷键命令</div>
     </a>
   

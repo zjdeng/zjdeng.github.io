@@ -132,7 +132,7 @@ ga('send', 'pageview');
 </ol>
 <h2 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h2><p>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
 <p>检查本机已存在的ssh密钥<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd ~<span class="regexp">/. ssh</span></div></pre></td></tr></table></figure></p>
-<p>如果提示：No such file or directory 说明你是第一次使用git。那么执行下面这条命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></div></pre></td></tr></table></figure></p>
+<p>如果提示：No such file or directory 说明你是第一次使用git。那么执行下面这条命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span></div></pre></td></tr></table></figure></p>
 <p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，打开<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat ~<span class="regexp">/.ssh/i</span>d_rsa.pub</div></pre></td></tr></table></figure></p>
 <p>复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br>将刚复制的内容粘贴到key那里，title随便填，保存。<br><img src="/img/blog2/blog2_pic1.png" alt="Alt text"></p>
 <h2 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
@@ -182,7 +182,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/blog2/" data-id="cj4h6u12l0004g405a3i42bfl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/blog2/" data-id="cj4h6u12l0004g405a3i42bfl" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -233,7 +233,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/blog1/" data-id="cj4h6u11m0000g4058066kium" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/26/blog1/" data-id="cj4h6u11m0000g4058066kium" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -290,7 +290,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj4h6u1280002g405ca4qj5yg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj4h6u1280002g405ca4qj5yg" class="article-share-link">Partager</a>
       
       
     </footer>
