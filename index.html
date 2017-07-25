@@ -53,7 +53,7 @@ ga('send', 'pageview');
     <h2 class="author">zjdeng</h2>
     <h3 class="description">前端安其拉</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -80,6 +80,66 @@ ga('send', 'pageview');
 </div>
 
         <section id="main">
+  
+    <article id="post-blog3" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/blog3/" class="article-date">
+  <time class="post-time" datetime="2017-07-25T14:28:38.036Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">25</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/blog3/">学习gulp(一)</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>gulp 和 grunt 非常类似，但相比于 grunt 的频繁 IO 操作，gulp 的流操作，能更快地更便捷地完成构建工作。所以现在大多数项目都采用的gulp构建工具，接下来跟我一起学习一下这个讨喜的小东西吧！</p>
+<h2 id="简单介绍一下："><a href="#简单介绍一下：" class="headerlink" title="简单介绍一下："></a>简单介绍一下：</h2><p>gulp是前端开发过程中对代码进行构建的工具，是自动化项目的构建利器；不仅能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成；使用它，我们不仅可以很愉快的编写代码，而且大大提高我们的工作效率呢。</p>
+<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><p>使用gulp这么前卫的工具，当然少不了我们的nodejs啦，这么有名应该都知道的吧，但是不了解的童鞋可以先去了解一下，这里我们大概知道怎么用就可以了，我们要先从官网下载安装它，然后进入命令行时代！（我个人用的是gitbash，我接下来的命令行都是在这上面运行的，大家也可以用windows自带的命令行终端）</p>
+<p>通过nodejs的npm全局安装和项目安装gulp，其次在项目里安装所需要的gulp插件，然后新建gulp的配置文件gulpfile.js并写好配置信息（定义gulp任务），最后通过命令提示符运行gulp任务即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node -v   # 查看nodejs版本号</div><div class="line">$ npm -v    # 查看npm版本号</div></pre></td></tr></table></figure>
+<p><img src="/img/blog3/blog3_pic1.png" alt="Alt text"></p>
+<p>npm 是nodejs自带的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）我们接下来要用的插件都可以npm来进行下载安装，命令行格式为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install &lt;name&gt; [-g] [--save-dev]</div></pre></td></tr></table></figure></p>
+<p><name> ：是要下载的插件名；<br>-g ：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；<br>–sava ： 将保存配置信息至package.json（package.json是nodejs项目配置文件）；<br>-dev：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点；一般保存在dependencies的像这些express/ejs/body-parser等等。</name></p>
+<h2 id="新建package-json文件："><a href="#新建package-json文件：" class="headerlink" title="新建package.json文件："></a>新建package.json文件：</h2><p>package.json是基于nodejs项目必不可少的配置文件，它是存放在项目根目录的普通json文件；<br><img src="/img/blog3/blog3_pic2.png" alt="Alt text"></p>
+<p>这些参数根据其中文意思大致知道是什么意思，现在我们注意到其中一个参数devDependencies这个是项目依赖的插件，而其中的gulp-less我们没有装，现在，如果你是手动建的文件夹，并键入的文本，可在这项版本号中写入空字符串（因为我们忘了安装插件gulp-less)，然后先保存这个文件，运行命令：npm install gulp-less –save-dev 嗯哼！这个时候空字符串里自动就填写了该插件的版本号。惊不惊喜，意不意外？谁让这是必不可少的配置文件呢！后面的插件就类似这样进行安装就好（注意：这是本地安装哦！）。<br>为了能正常使用，我们还得本地安装gulp：npm install gulp –save-dev；<br>PS：细心的你可能会发现，我们全局安装了gulp，项目也安装了gulp，全局安装gulp是为了执行gulp任务，本地安装gulp则是为了调用gulp插件的功能。</p>
+<h2 id="新建gulpfile-js文件："><a href="#新建gulpfile-js文件：" class="headerlink" title="新建gulpfile.js文件："></a>新建gulpfile.js文件：</h2><p>gulpfile.js是gulp项目的配置文件，是位于项目根目录的普通js文件（其实将gulpfile.js放入其他文件夹下亦可）；<br><img src="/img/blog3/blog3_pic3.png" alt="Alt text"></p>
+<p>此时执行gulp 或 gulp default , 将会执行该文件，调用default，并先执行其依赖的方法，执行过程如下图：<br><img src="/img/blog3/blog3_pic4.png" alt="Alt text"><br>好了，这样我们就小打小闹的搭好了一个小事例，会简单使用gulp工具了，接下来还要学习高级的gulp使用，运用到真实项目中，正在努力学习中……</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/25/blog3/" data-id="cj5jpod7a0000vw05nzend5w1" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-blog2" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -342,7 +402,7 @@ ga('send', 'pageview');
     <h2 class="author">zjdeng</h2>
     <h3 class="description">前端安其拉</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
